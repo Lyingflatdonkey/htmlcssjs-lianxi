@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百职计算机2班卢泳宇</title>
+    <link rel="stylesheet" href="./bailiban.css">
+    <link rel="stylesheet" href="./yejianmosi.css">
+    <link rel="stylesheet" href="./dengluzhuce.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_3937419_nn39wnqog6r.css">
+</head>
+<body>
+    <!-- #app>.container>(.top>(ul.list>li.item*5>a)+img)+(.bottom>img+lu.list>li.item*5>a)+(input*2)+(.banner-box>ul.list>li.item*5>a) -->
+    <div id="app">
+        <div class="top">
+            <!-- ----------------------------------------top----------------------------------- -->
+            <!-- 版心 -->
+            <div class="container">
+                <ul class="list">
+                    <li class="item"><a href="">上传简历</a></li>
+                    <li class="item"><a href="">编辑简历</a></li>
+                    <li class="item"><a href="">进入企业端</a></li>
+                    <li class="item"><a href="">我的消息</a></li>
+                    <li class="item"><a href=""><label for="dengluzhuce">登录</label></a></li>|
+                    <li class="item"><a href=""><label for="dengluzhuce">注册</label></a></li>
+                    <img src="./img/defaultAvatar.png" alt="">
+                    <!-- 复选框 -->
+                    <input  type="checkbox" id="dengluzhuce" hidden>
+                </ul>
+            </div>
+        </div>
+        <!-- ----------------------------------------tab栏----------------------------------- -->
+        <!-- tab栏 -->
+        <div class="bottom">
+            <div class="container">
+                <img src="./img/new_logo.png" alt="">
+                <lu class="list">
+                    <li class="item"><a href="">首页</a></li>
+                    <li class="item"><a href="">职位</a></li>
+                    <li class="item"><a href="">公司</a></li>
+                    <li class="item"><a href="">跨境电商专区</a></li>
+                    <li class="item"><a href="">百里半学院</a></li>
+                </lu>
+            </div>
+        </div>
+        <!-- ----------------------------------------搜索栏----------------------------------- -->
+        <!-- 搜索栏 -->
+        <input  type="checkbox" id="sousuobnt" hidden>
+        
+        <div class="sousuo">
+            <label for="sousuobnt"><div href="" class="zhiye"><p>职业</p><div><span class="iconfont icon-jiantouxia"></span></div></div>
+            <div>
+                <div class="btn">
+                    <div class="btn-zhiye1">职业</div>
+                    <div class="btn-gongsi2">公司</div>
+                </div>
+            </div>
+            </label>
+            <label for="">
+                <input type="text" placeholder="       输入关键字进行搜索" id="bat-input"><button type="button"><span class="iconfont icon-sousuo"></span>搜索</button>
+            </label>
+        </div>
+        <!-- ----------------------------------------banner----------------------------------- -->
+            <div class="banner-box">
+                <div class="banner">
+                    <!-- 轮播图 -->
+                    <ul class="list1">
+                        <li><a href=""><img src="./img/banner1.png" alt=""></a></li>
+                        <li><a href=""><img src="./img/banner2.jpg" alt=""></a></li>
+                        <li><a href=""><img src="./img/banner3.png" alt=""></a></li>
+                        <li><a href=""><img src="./img/banner4.png" alt=""></a></li>
+                        <li><a href=""><img src="./img/banner5.jpg" alt=""></a></li>
+                    </ul>
+                    <!-- 5个圆点 -->
+                    <ul class="list2">
+                        <li onclick="yd(1)"></li>
+                        <li onclick="yd(2)"></li>
+                        <li onclick="yd(3)"></li>
+                        <li onclick="yd(4)"></li>
+                        <li onclick="yd(5)"></li>
+                    </ul>
+                    <!-- 左右点击按钮 -->
+                    <span class="iconfont icon-zuo"></span>
+                    <span class="iconfont icon-you"></span>
+                </div>
+                <div class="container">
+                    <!-- 职业大类 -->
+                    <ul  class="list">
+                        <li onmouseenter="xianshi(0)" onmouseleave="yincang(0)"class="item"><a href="">软件技术类/信息技术类</a></li>
+                        <li onmouseenter="xianshi(1)" onmouseleave="yincang(1)"class="item"><a href="">产品设计类</a></li>
+                        <li onmouseenter="xianshi(2)" onmouseleave="yincang(2)"class="item"><a href="">电子商务/互联网营销</a></li>
+                        <li onmouseenter="xianshi(3)" onmouseleave="yincang(3)"class="item"><a href="">云计算运维/实施类</a></li>
+                        <li onmouseenter="xianshi(4)" onmouseleave="yincang(4)"class="item"><a href="">高级管理类/项目管理类</a></li>
+                    </ul>
+                    <di class="hezi">
+                        <!-- 职业弹窗 -->
+                        <ul class="yincanghezi">
+                            <li onmouseenter="xianshi(0)" onmouseleave="yincang(0)">
+                                <h2>软件技术类</h2>
+                                <div><p>汪汪汪汪</p>
+                                <p>嘎嘎嘎</p>
+                                <p>吱吱吱吱吱吱吱吱吱</p>
+                                <p>嘎嘎嘎</p>
+                                <p>汪汪汪汪</p>
+                                <p>嘎嘎嘎吱吱吱</p>
+                                <p>嘎嘎嘎</p>
+                                <p>嘎嘎嘎吱吱吱吱吱吱</p>
+                                <p>汪汪汪汪</p>
+                                <p>嘎嘎嘎吱吱吱</p>
+                                <p>汪汪汪汪</p>
+                                <p>嘎嘎嘎</p></div>
+                            </li>
+                            <li onmouseenter="xianshi(1)" onmouseleave="yincang(1)">
+                                <h2>产品设计类</h2>
+                                <div><p>汪汪汪汪</p>
+                                    <p>嘎嘎嘎</p>
+                                    <p>吱吱吱吱吱吱吱吱吱</p>
+                                    <p>嘎嘎嘎</p>
+                                    <p>汪汪汪汪</p>
+                                    <p>嘎嘎嘎吱吱吱</p>
+                                    <p>嘎嘎嘎</p>
+                                    <p>嘎嘎嘎吱吱吱吱吱吱</p>
+                                    <p>汪汪汪汪</p>
+                                    <p>嘎嘎嘎吱吱吱</p>
+                                    <p>汪汪汪汪</p>
+                                    <p>嘎嘎嘎</p></div>
+                            </li>
+                            <li onmouseenter="xianshi(2)" onmouseleave="yincang(2)">
+                                <h2>电子商务/互联网营销</h2>
+                                <div><p>汪汪汪汪</p>
+                                    <p>嘎嘎嘎</p>
+                                    <p>吱吱吱吱吱吱吱吱吱</p>
+                                    <p>嘎嘎嘎</p>
+                                    <p>汪汪汪汪</p>
+                                    <p>嘎嘎嘎吱吱吱</p>
+                                    <p>嘎嘎嘎</p>
+                                    <p>嘎嘎嘎吱吱吱吱吱吱</p>
+                                    <p>汪汪汪汪</p>
+                                    <p>嘎嘎嘎吱吱吱</p>
+                                    <p>汪汪汪汪</p>
+                                    <p>嘎嘎嘎</p></div>
+                            </li>
+                            <li onmouseenter="xianshi(3)" onmouseleave="yincang(3)">
+                                <h2>云计算运维/实施类</h2>
+                                <div><p>汪汪汪汪</p>
+                                    <p>嘎嘎嘎</p>
+                                    <p>吱吱吱吱吱吱吱吱吱</p>
+                                    <p>嘎嘎嘎</p>
+                                    <p>汪汪汪汪</p>
+                                    <p>嘎嘎嘎吱吱吱</p>
+                                    <p>嘎嘎嘎</p>
+                                    <p>嘎嘎嘎吱吱吱吱吱吱</p>
+                                    <p>汪汪汪汪</p>
+                                    <p>嘎嘎嘎吱吱吱</p>
+                                    <p>汪汪汪汪</p>
+                                    <p>嘎嘎嘎</p></div>
+                            </li>
+                            <li onmouseenter="xianshi(4)" onmouseleave="yincang(4)">
+                                <h2>高级管理类/项目管理类</h2>
+                                <div><p>汪汪汪汪</p>
+                                    <p>嘎嘎嘎</p>
+                                    <p>吱吱吱吱吱吱吱吱吱</p>
+                                    <p>嘎嘎嘎</p>
+                                    <p>汪汪汪汪</p>
+                                    <p>嘎嘎嘎吱吱吱</p>
+                                    <p>嘎嘎嘎</p>
+                                    <p>嘎嘎嘎吱吱吱吱吱吱</p>
+                                    <p>汪汪汪汪</p>
+                                    <p>嘎嘎嘎吱吱吱</p>
+                                    <p>汪汪汪汪</p>
+                                    <p>嘎嘎嘎</p></div>
+                            </li>
+                        </ul>
+                    </di>
+                    
+                </div>
+            </div>
+            <!-- ----------------------------------------登录与注册弹窗 ----------------------------------- -->
+            <!-- 登录与注册弹窗 -->
+            <div class="Theuserlogson">
+                <div class="denglu"><div>登 录</div></div>
+                <div class="zhuce"><div>注册</div></div>
+                <label for="dengluzhuce"><div class="guanbi">关闭</div></label>
+            </div>
+            <!-- ----------------------------------------夜间模式按钮----------------------------------- -->
+            <!-- 夜间模式按钮 -->
+            
+            <input  type="checkbox" id="danxuang" hidden>
+            <label for="danxuang" id="tab">
+                <div id="anniu">
+                    <div class="beijing"></div>
+                    <div class="btn">
+                        <div class="bandiaan1 bandiaan"></div>
+                        <div class="bandiaan2 bandiaan"></div>
+                        <div class="bandiaan3 bandiaan"></div>
+                    </div>
+                    <div class="yun"></div>
+                    <div class="guang guang1"></div>
+                    <div class="guang guang2"></div>
+                    <div class="guang guang3"></div>
+                    <div class="xinxin"></div>
+                    <div class="xinxin"></div>
+                    <div class="xinxin"></div>
+                    <div class="xinxin"></div>
+                    <div class="xinxin"></div>
+                    <div class="xinxin"></div>
+                    <div class="xinxin"></div>
+                    <div class="xinxin"></div>
+                    </div>
+            </label>
+            <!-- ----------------------------------------背景视频----------------------------------- -->
+            <!-- 背景视频 -->
+            <div class="remengangwe">
+                <video class="beijinshiping" autoplay muted loop src="./img/北极光的延时视频Time Lapse Video Of A_爱给网_aigei_com.mp4"></video>
+                <div class="container">
+                    
+                </div>
+            </div>
+            <!-- ----------------------------------------页脚----------------------------------- -->
+            <!-- 页脚 -->
+            <footer class="el-footer" >
+                <div class="container">
+                    <div  class="footerBody">
+                        <div class="footerLeft">
+                            <div  class="footerLeftTop">
+                                
+                            <img  src="/img/footer_logo.png" style="margin-bottom: 10px; width: 120px; height: 60px; opacity: 0.7;">
+                            <span style="font-size: 16px;padding-left: 20px;">
+                                行百里者半九十 专注你的紧要几步
+                            </span>
+                        </div>
+                        <p class="operateLine linkLine">
+                            <span >关于我们</span>
+                            <span >注册协议</span>
+                            <span >隐私协议</span>
+                            <span >常见问题</span>
+                            <span >帮助中心</span>
+                        </p>
+                        <p  class="operateLine">
+                            <span >友情链接：</span>
+                            <span  class="footerLink">厚溥教育</span>
+                        </p>
+                        <p  class="operateLine">
+                            <span>地址：湖北省武汉市洪山区关山大道光谷软件园D区8栋</span>
+                            <span>版权信息：百里半（武汉）网络技术有限公司</span>
+                        </p>
+                        <p class="operateLine">
+                            <span>网址：https://bailiban.com</span>
+                            <span>鄂ICP备16020168号-8</span>
+                        </p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                
+        </footer>
+        </div>
+    </div>
+    <script>/* --------------------夜间模式切换按钮--------------------------*/
+        /* ----------------------------------------------*/
+        //夜间模式切换按钮
+        let btn=document.querySelector('#danxuang')
+        //banner职业标题
+        let banner_h2 = document.querySelectorAll('.hezi>.yincanghezi h2');
+        //banner岗位内容
+        let banner_P = document.querySelectorAll('.hezi>.yincanghezi P');
+        //当按纽被点击时触发以下事件
+        btn.onclick=function(){
+        //当按钮为true时触发以下事件
+            if(btn.checked==true){
+                //遍历标题 把字体颜色改为灰色
+                for(let i=0;i<banner_h2.length;i++){
+                    banner_h2[i].style.color="#ececec";
+                }
+                //遍历内容 把字体颜色改为灰色
+                banner_P.forEach((banner_P) => {
+                    banner_P.style.color="#ececec";
+                });
+                //把内容的背景颜色改为黑色半透明
+                ychz.style.background='rgb(0, 0, 0,.5)';
+                //显示背景视频
+                document.querySelector('.beijinshiping').style.opacity='1';
+                //top 栏 背景颜色透明
+                document.querySelector('#app .top').style.backgroundColor='rgb(26, 25, 31,.2)';
+            }
+            else{
+                for(let i=0;i<banner_h2.length;i++){
+                    banner_h2[i].style.color="#636364";
+                }
+                banner_P.forEach((banner_P) => {
+                    banner_P.style.color="#636364";
+                });
+                ychz.style.background='#ffffffe0';
+                document.querySelector('.beijinshiping').style.opacity='0';
+                document.querySelector('#app .top').style.backgroundColor='rgb(26, 25, 31,1)';
+            }
+        }
+    </script>
+    <script>/* ---------------------登录注册弹窗-------------------------*/
+        /* ----------------------------------------------*/
+        // 登录注册弹窗
+
+        //关闭弹窗点击事件
+        document.querySelector('.guanbi').onclick=function(){
+            //弹窗隐藏
+            document.querySelector('.Theuserlogson').style.display='none'
+        }
+        //labei点击触发事件
+        document.querySelector('#dengluzhuce').onclick=function(){
+            //当复选框为true时触发以下事件
+            if(document.querySelector('#dengluzhuce').checked==true){
+                //弹窗显示
+                document.querySelector('.Theuserlogson').style.display='block'
+            }else{
+                //弹窗隐藏
+                document.querySelector('.Theuserlogson').style.display='none'
+            }
+        }
+        
+        document.querySelector('.Theuserlogson .denglu>div').onclick=function(){
+            document.querySelector('.Theuserlogson .denglu').style.transition='all 1S ease-in-out';
+            setTimeout(()=>{document.querySelector('.Theuserlogson .denglu').style.zIndex='2';},400)
+            document.querySelector('.Theuserlogson .denglu').style.transform='rotateX(-360deg)';
+            document.querySelector('.Theuserlogson .zhuce').style.transition='none';
+            document.querySelector('.Theuserlogson .zhuce').style.transform='rotateX(0deg)';
+
+            //
+            document.querySelector('.Theuserlogson .zhuce>div').onclick=function(){
+            document.querySelector('.Theuserlogson .zhuce').style.transition='all 1S ease-in-out';
+            setTimeout(()=>{document.querySelector('.Theuserlogson .denglu').style.zIndex='0';},700)
+            document.querySelector('.Theuserlogson .zhuce').style.transform='rotateX(-360deg)';
+        document.querySelector('.Theuserlogson .denglu').style.transition='none';
+        document.querySelector('.Theuserlogson .denglu').style.transform='rotateX(0deg)';
+        }
+        }
+        
+    </script>
+    <script>/* ----------------------输入框的职业公司切换------------------------*/
+    /* ----------------------------------------------*/
+        //获取输入框的职业切换标签对象
+        let btn_zhiye = document.querySelector('.btn-zhiye1')
+        //获取公司切换标签对象
+        let btn_gongsi = document.querySelector('.btn-gongsi2')
+        //获取需要修改内容对象
+        let btn_handoff = document.querySelector('.zhiye>p')
+        //点击职业
+        btn_zhiye.onclick = function(){
+            //修改text内容
+            btn_handoff.innerText = '职业';
+            //职业高亮
+            this.style.color='#17ac82';
+            //清除公司高亮
+            btn_gongsi.style.color='rgb(6, 2, 41)';
+        }
+        //点击公司
+        btn_gongsi.onclick = function(){
+            //修改text内容
+            btn_handoff.innerText = '公司';
+            //公司高亮
+            this.style.color='#17ac82';
+            //清除职业高亮
+            btn_zhiye.style.color='rgb(6, 2, 41)';
+        }
+    </script>
+    <script>/* ----------------------banner的轮播图------------------------*/
+        /* ----------------------------------------------*/
+        //获取banner的轮播图
+        let banner_handoff = document.querySelector('.banner-box>.banner>ul');
+        //复制轮播图列表里的第一张图片 并插入到轮播图列表最后面  此时轮播列表里有6张图片
+        let clonefirstimg = banner_handoff.firstElementChild.cloneNode(true);
+        banner_handoff.appendChild(clonefirstimg);
+        //获取banner的左右点击按钮
+        let btn_zuo = document.querySelector('.icon-zuo');
+        let btn_you = document.querySelector('.icon-you');
+        //获取banner的 6个圆点
+        let yuanDian = document.querySelectorAll('.banner-box>.banner>.list2>li')
+        //建立一个变量 记录当前轮播图位置
+        let ir = 0
+        //函数节流锁
+        let jieliufa=true;
+
+        //右点击按钮
+        // btn_you.onclick = 
+        function rihgbt(){
+            //节流锁为 false 的时候，直接{return}返回 后面代码不执行
+            if(!jieliufa)return;
+            ir++;
+            //轮播图右平移
+            banner_handoff.style.left= ir * -100 + '%';
+            //开启轮播过渡
+            banner_handoff.style.transition="all .7s ease";
+            //轮播图过渡到第6张，并去掉过渡直接跳回第1张 
+            if(ir===5){
+                ir=0;
+                setTimeout(()=>{
+                    //去掉过渡直接跳回到第1张
+                    banner_handoff.style.transition="none";
+                    banner_handoff.style.left= 0;
+                },700)
+            }
+            //节流锁 关闭  (此时点击事件里的节流锁成立！直接{return}返回)
+            jieliufa=false;
+            //异步延时700毫秒 节流锁 开启
+            setTimeout(()=>{
+                jieliufa=true;
+            },700);
+            //去除圆点高亮
+            for(let i = 0 ; i<yuanDian.length;i++){
+                yuanDian[i].style.backgroundColor=' #ffffff';
+            };
+            //圆点高亮
+            yuanDian[ir].style.backgroundColor='#17ac82';
+        }
+
+        btn_you.addEventListener("click",()=>{
+            rihgbt()
+        });
+
+
+        //自动轮播
+        // let zidonglunbo = setInterval(() => {rihgbt();},1500);
+        // //鼠标移入banner停止轮播
+        // banner_handoff.addEventListener("mouseenter",()=>{
+        //     // console.log(banner_handoff);
+        //     clearInterval(zidonglunbo);
+        // })
+        // //鼠标移出banner开启轮播
+        // banner_handoff.addEventListener("mouseleave",()=>{
+        //     // console.log(banner_handoff);
+        //     clearInterval(zidonglunbo);
+        //     zidonglunbo = setInterval(() => {rihgbt();},1500);
+        // })
+
+        //自动轮播2(固定间隔)
+        //定时器ID
+        let lunbo2 = setTimeout(function zidonglunbo2(){
+                rihgbt();
+                setTimeout(zidonglunbo2,2000)
+            },2000)
+        //鼠标移入banner停止轮播
+        banner_handoff.addEventListener("mouseenter",()=>{
+            clearTimeout(lunbo2);
+        })
+        //鼠标移出banner开启轮播
+        banner_handoff.addEventListener("mouseleave",()=>{
+            lunbo2 = setTimeout(function zidonglunbo2(){
+                rihgbt();
+                lunbo2 = setTimeout(zidonglunbo2,2000)
+            },2000)
+        })
+
+        //左点击按钮
+        btn_zuo.onclick = function(){
+            //节流锁为 false 的时候，直接{return}返回 后面代码不执行
+            if(!jieliufa)return;
+            ir--;
+            //去除圆点高亮
+            for(let i = 0 ; i<yuanDian.length;i++){;
+                yuanDian[i].style.backgroundColor=' #ffffff';
+            };
+            //图片位置大于等于，圆点高亮
+            if(ir>=0){yuanDian[ir].style.backgroundColor='#17ac82';}
+            //图片位于-1的时候
+            if(ir===-1){
+                //第5个圆点高亮
+                yuanDian[4].style.backgroundColor='#17ac82';
+                //去掉过渡动画
+                banner_handoff.style.transition="none";
+                //直接跳到第5张图片
+                banner_handoff.style.left= 5 * -100 + '%';
+
+                setTimeout(()=>{
+                    ir=4
+                    banner_handoff.style.left= ir * -100 + '%';
+                    banner_handoff.style.transition="all .7s ease";
+                },0);
+            }
+            else{
+                banner_handoff.style.left= ir * -100 + '%';
+            }
+            //节流锁 关闭  (此时点击事件里的节流锁成立！直接{return}返回)
+            jieliufa=false;
+            //异步延时700毫秒 节流锁 开启
+            setTimeout(()=>{
+                jieliufa=true;
+            },700);
+        }
+        //右按钮移入停止轮播
+        btn_you.addEventListener("mouseenter",()=>{
+            //轮播1
+            //clearInterval(zidonglunbo);
+            //轮播2
+            clearTimeout(lunbo2);
+        })
+
+        //左按钮移入停止轮播
+        btn_zuo.addEventListener("mouseenter",()=>{
+            //轮播1
+            //clearInterval(zidonglunbo);
+            //轮播2
+            clearTimeout(lunbo2);
+        })
+        
+        //圆点点击事件
+        function yd(a){
+            //开启轮播过渡
+            banner_handoff.style.transition="all .7s ease";
+            //去除圆点高亮
+            for(let i = 0 ; i<yuanDian.length;i++){
+                yuanDian[i].style.backgroundColor=' #ffffff';
+            }
+            //函数行参-1赋值给轮播图位置
+            ir=a-1;
+            //圆点高亮
+            yuanDian[ir].style.backgroundColor='#17ac82';
+            //平移轮播图
+            banner_handoff.style.left= ir * -100 + '%';
+        }
+
+    </script>
+    <script>/* -----------------------职业大类-----------------------*/
+        /* ----------------------------------------------*/
+        //banner垂直
+        
+        let ychz = document.querySelector('.banner-box .container>.hezi>.yincanghezi')
+        let hezhimengban = document.querySelector('.banner-box .container>.hezi')
+        function xianshi(a){
+            hezhimengban.style.width='500px';
+            ychz.style.top= a * -100 + '%';
+        }
+        function yincang(a){
+        
+            hezhimengban.style.width='0px';
+            ychz.style.top= a * -100 + '%';
+        }
+    </script>
+</body>
+</html>

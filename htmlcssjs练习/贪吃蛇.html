@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #app{
+            width: 360px;
+            height: 420px;
+            border: 10px #000 solid;
+            background-color: #b7d4a8;
+            border-radius: 20px;
+
+            margin: 50px auto;
+
+        }
+        #app>.gemwindo{
+            width: 304px;
+            height: 304px;
+            border: 2px #000 solid;
+            margin: 20px auto;
+            position: relative;
+        }
+        .info{
+            width: 304px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            font: bold 20px courier;
+        }
+        #food{
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+            position: absolute;
+            top: 100px;
+            left: 120px;
+            display: flex;
+            flex-flow:wrap;
+            top: 10px;
+            left: 0px;
+        }
+        #food>div{
+            width: 5px;
+            height: 5px;
+            background-color: #000;
+            transform: rotate(45deg);
+        }
+
+        #snake>div{
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+            position: absolute;
+            border: 1px #b7d4a8 solid;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="gemwindo">
+
+            <div id="snake">
+                <div></div>
+            </div>
+            <div id="food">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="info">
+            <div>SCORE:<span id="score">0</span></div>
+            <div>LEVEL:<span id="level">1</span></div>
+        </div>
+
+    </div>
+    <script>
+        /*
+            绑定按键事件 keydown keyup
+                - 键盘事件只能绑定给可以获取焦点的元素或者是document
+        */
+        //获取蛇
+        const snake = document.getElementById('snake')
+        const snakes =snake.getElementsByTagName('div')       
+        //获取食物
+        const food = document.getElementById('food')
+        //食物随机位置
+        function changeFood(){
+            //获取两个随机坐标
+            let x = Math.floor( Math.random() * 30) * 10
+            let y = Math.floor( Math.random() * 30) * 10
+                for (let i = 0; i < snakes.length; i++) {
+                    //判断这个坐标和蛇的身体是否重叠 重叠的重新调用该函数
+                    if(snakes[i].offsetLeft === x && snakes[i].offsetTop === y){
+                        changeFood()
+                        return
+                    }
+                }
+                food.style.left = x+'px'
+                food.style.top = y+'px'
+        }
+        //创建两个变量来记录分数
+        let score = 0
+        let level = 1
+        //创建一个变量用来存储蛇的移动方向
+        let dir
+        //创建一个变量来记录按键的状态 确保按键不会连续触发
+        let keyActive = true 
+        const reObj = {
+            ArrowUp:"ArrowDown",
+            ArrowDown:"ArrowUp",
+            ArrowLeft:"ArrowRight",
+            ArrowRight:"ArrowLeft"
+        }
+        document.addEventListener("keydown",(event)=>{
+        //当蛇长度达到2时 设不能往反方向走
+        if( keyActive && ["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].includes(event.key )){
+            if(snakes.length<2 || event.key !== reObj[dir]){
+                dir = event.key
+                //当快速触发按键时只会触发第一次 后面的按键不会触发
+                keyActive = false
+            }
+        }
+        
+       })
+        setTimeout(function move(){
+        //蛇的方向方向生效后 才能再次触发按键
+        keyActive = true
+        //获取蛇头
+        const head= snakes[0]
+        //获取蛇头位置
+        let x = head.offsetLeft
+        let y = head.offsetTop
+        switch (dir) {
+            case "ArrowUp":
+                y -= 10
+                break;
+            case "ArrowDown":
+                y += 10
+                break; 
+            case "ArrowLeft":
+                x -= 10
+                break;
+            case "ArrowRight":
+                x += 10
+                break;     
+        };
+        //检查蛇是否吃到食物
+        if(head.offsetTop === food.offsetTop && head.offsetLeft === food.offsetLeft){
+            //1.改变食物位置
+            changeFood();
+            //2.增加蛇的身体
+            snake.insertAdjacentHTML("beforeend","<div/>")
+            //增加分数
+            score++;
+            document.getElementById("score").innerText = score
+            //增加等级
+            if(score % 2 === 0 && level < 10){
+                level++
+                document.getElementById("level").innerText = level
+            }
+            //判断蛇的长度是否达到极限
+            if(snakes.length >= (30*30)){
+                alert("恭喜通关")
+                return 
+            }
+        }
+        //判断蛇是否撞墙
+        if(x < 0 || x > 290 || y < 0 || y > 290){
+            //游戏结束
+            alert("游戏结束")
+            location.reload()
+            return
+        }
+        //判断是否撞到自己
+        for (let i = 0; i < snakes.length - 1; i++) {
+            if(snakes[i].offsetLeft === x && snakes[i].offsetTop === y){
+                alert("游戏结束")
+                location.reload()
+                return
+            }
+        }
+        //获取到蛇尾
+        let shewei = snakes[snakes.length-1]
+        //修改蛇尾位置
+        shewei.style.left = x + 'px'
+        shewei.style.top = y + 'px'
+        //修改HTML结构 把蛇尾放在第一个
+        snake.insertAdjacentElement("afterbegin",shewei)
+
+        setTimeout(move,300 - level * 18 );
+       },300)
+
+
+    </script>
+</body>
+</html>

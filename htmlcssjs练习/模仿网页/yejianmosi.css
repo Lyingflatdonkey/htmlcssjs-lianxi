@@ -1,0 +1,222 @@
+/* ---------------------------------------夜间模式按钮---------------------------------- */
+#tab{
+    /* 按钮大小 */
+    --width:9rem;
+    display: block;
+    width: var(--width);
+    height: calc(var(--width)/2.5);
+    Border-radius:calc(var(--width)/2);
+    position: sticky;
+    top: 80vh;
+    left: 80%;
+    overflow: hidden;
+}
+#anniu{
+    --height:calc(var(--width)/2.5);
+    width: var(--width);
+    height: var(--height);
+    Border-radius:calc(var(--height)/2);
+    box-shadow: inset calc(var(--height)/100) calc(var(--height)/100) calc(var(--height)/50) 0px rgb(31, 31, 31),
+    inset calc(var(--height)*-0.01) calc(var(--height)*-0.01) calc(var(--height)*0.1) 0px rgb(75, 74, 74);
+    transition: all 0.5s;
+}
+.beijing{
+    position: absolute;
+    width:calc(var(--width)*1.5) ;
+    height: calc(var(--width)*1.5);
+    top: calc(var(--width)*-0.15625);
+    left: calc(var(--width)*-0.3125);
+    background: linear-gradient(rgb(51, 145, 252), rgb(158, 197, 233), rgb(72, 118, 161),rgb(21, 32, 70),rgb(4, 8, 24));
+    transform: rotateZ(0deg);
+    transition: all 1s;
+    /* z-index: -1; */
+}
+.btn{
+    position: absolute;
+    width: calc(var(--height)/1.5);
+    height:calc(var(--height)/1.5);
+    background-color: rgb(255, 215, 36);
+    Border-radius:calc(var(--height)/2);
+    top: calc(var(--height)/6);
+    left: calc(var(--height)/6);
+    box-shadow: inset calc(var(--height)/80) calc(var(--height)/80) calc(var(--height)*0.01) 0px rgb(255, 255, 255),
+    inset calc(var(--height)*-0.01) calc(var(--height)*-0.01) calc(var(--height)*0.03) 0px rgb(102, 102, 102);
+    transition: all 0.75s;
+}
+.guang{
+    position: absolute;
+    justify-content: center;
+    width: calc(var(--height)*1.25);
+    height: calc(var(--height)*1.25);
+    top: calc(var(--height)*-0.15);
+    left: calc(var(--height)*-0.15);
+    Border-radius:50%;
+    background-color: rgba(252, 252, 252, 0.075);
+    transition: left 1s;
+    z-index: -1;
+}
+.guang1 {
+    --left:calc(var(--height)*1.4);
+}
+.guang2 {
+    --left:calc(var(--height)*1.1);
+    background-color: rgb(255, 255, 255 0.075);
+    width: calc(var(--height)*1.5);
+    height: calc(var(--height)*1.5);
+    left: calc(var(--height)*-0.09375);
+    top: calc(var(--height)*-0.28125);
+    transition: left 1.25s;
+}
+.guang3 {
+    --left:calc(var(--height)*0.8);
+    background-color: rgb(255, 255, 255 0.05);
+    width: calc(var(--height)*1.75);
+    height: calc(var(--height)*1.75);
+    top: calc(var(--height)*-0.375);
+    left: calc(var(--height)*-0.03125);
+    transition: left 1.5s;
+}
+.bandiaan{
+    position: absolute;
+    transition: all 1s;
+    z-index: -1;
+    opacity: 0;
+    box-shadow: inset calc(var(--height)/80) calc(var(--height)/80) calc(var(--height)*0.01) 0px rgb(32, 32, 32);
+
+}
+.bandiaan1{
+    width: calc(var(--height)/5);
+    height: calc(var(--height)/5);
+    Border-radius:50%;
+    top: calc(var(--height)/3.5);
+    left: calc(var(--height)/9);
+    background-color: rgb(92, 91, 89);
+}
+.bandiaan2{
+    width: calc(var(--height)/8);
+    height: calc(var(--height)/8);
+    Border-radius:50%;
+    top: calc(var(--height)/2.4);
+    left: calc(var(--height)/2.7);
+    background-color: rgb(92, 91, 89);
+}
+.bandiaan3{
+    width: calc(var(--height)/8);
+    height: calc(var(--height)/8);
+    Border-radius:50%;
+    top: calc(var(--height)/8);
+    left: calc(var(--height)/2.5);
+    background-color: rgb(92, 91, 89);
+}
+.yun{
+    position: absolute; 
+    width: calc(var(--height)/2);
+    height: calc(var(--height)/2);
+    background-color: rgb(255, 255, 255);
+    Border-radius:50%;
+    top:calc(var(--height)*0.8);
+    left: 0;
+    box-shadow: calc(var(--height)*0.375) calc(var(--height)*0.09375) 0px rgb(255, 255, 255),
+                calc(var(--height)*0.718) calc(var(--height)*0.0625) 0px rgb(255, 255, 255),
+                calc(var(--height)*1.0875) calc(var(--height)*-0.09375) 0px rgb(255, 255, 255),
+                calc(var(--height)*1.46875) calc(var(--height)*-0.1875) 0px rgb(255, 255, 255),
+                calc(var(--height)*1.78125) calc(var(--height)*-0.1875) 0px rgb(255, 255, 255),
+                calc(var(--height)*1.9375) calc(var(--height)*-0.468) 0px rgb(255, 255, 255),
+                calc(var(--height)*2.03125) calc(var(--height)*-0.375) 0px rgb(255, 255, 255),
+                calc(var(--height)*2.09375) calc(var(--height)*-0.6875) 0px rgb(255, 255, 255),
+                calc(var(--height)*0.5) calc(var(--height)*-0.025) 0px rgb(255, 255, 255,0.7),
+                calc(var(--height)*0.94) calc(var(--height)*-0.18) 0px rgb(255, 255, 255,0.7);
+                transition: all 1.25s;
+}
+#danxuang[type='checkbox']:checked~label .beijing{
+    transform: rotateZ(-190deg);
+}
+#danxuang[type='checkbox']:checked~label #anniu>.btn{
+    left:calc(var(--height)*1.65);
+    background-color:rgb(228, 219, 141);
+}
+#danxuang[type='checkbox']:checked~label #anniu>.btn>.bandiaan{
+    z-index: +1;
+    opacity:0.9;
+}
+#danxuang[type='checkbox']:checked~label #anniu>.yun{
+    top:calc(var(--height)*1.1);
+    left:calc(var(--height)*0.36875);
+    box-shadow: 0 0 0px rgb(255, 255, 255),
+                0 0 0px rgb(255, 255, 255),
+                calc(var(--height)*-1.0875) calc(var(--height)*0.09375) 0px rgb(255, 255, 255),
+                calc(var(--height)*1.46875) calc(var(--height)*0.1875) 0px rgb(255, 255, 255),
+                calc(var(--height)*1.78125) calc(var(--height)*0.1875) 0px rgb(255, 255, 255),
+                calc(var(--height)*1.9375) calc(var(--height)*0.468) 0px rgb(255, 255, 255),
+                calc(var(--height)*2.03125) calc(var(--height)*0.375) 0px rgb(255, 255, 255),
+                calc(var(--height)*2.09375) calc(var(--height)*0.6875) 0px rgb(255, 255, 255),
+                calc(var(--height)*-0.5) calc(var(--height)*0.025) 0px rgb(255, 255, 255,0.7),
+                calc(var(--height)*-0.94) calc(var(--height)*0.18) 0px rgb(255, 255, 255,0.7);
+}
+#danxuang[type='checkbox']:checked~label #anniu>.guang{
+    left:var(--left);
+}
+.xinxin{
+    position: absolute;
+    --height:calc(var(--width)/2.5);
+    --xin1:calc(var(--height)*0);
+    width: 0px;
+    height: 0px;
+    Border-radius:50%;
+    background-color: rgb(236, 236, 236);
+    /* left: calc(var(--height)*0.9375); */
+    /* top:calc(var(--height)*0.875); */
+    top: calc(var(--width)*-0.625);
+    left: calc(var(--width)*0.625);
+    -webkit-mask:radial-gradient(ellipse at 0 0,transparent calc(var(--xin1)*-0.0625) ,red 0)0px 0px;
+    opacity: 0;
+    transition:all 0.75s;
+    transform: rotateZ(-0deg);
+}
+#danxuang[type='checkbox']:checked~label .xinxin{
+    width: calc(var(--xin1)*0.125);
+    height: calc(var(--xin1)*0.1875);
+    left:calc(var(--height)*1.46875);
+    top: calc(var(--height)*0.1875);
+    --xin1:calc(var(--height)*0.9);
+    opacity: 0.9;
+    transition: all 1.25s;
+    -webkit-mask:radial-gradient(ellipse at calc(var(--xin1)*0.0625) calc(var(--xin1)*0.09375),transparent calc(var(--xin1)*0.0625) ,red 0)calc(var(--xin1)*-0.0625) calc(var(--xin1)*-0.09375);
+    /* -webkit-mask:radial-gradient(ellipse at calc(var(--xin1)*0.0625) calc(var(--xin1)*0.09375),transparent calc(var(--xin1)*0.0625) ,red 0)calc(var(--xin1)*0.0625) calc(var(--xin1)*0.09375); */
+    transform: rotateZ(720deg);
+}
+#danxuang[type='checkbox']:checked~label .xinxin:nth-child(7){
+    left: calc(var(--height)*0.375);
+    top:calc(var(--height)*0.375);
+    --xin1:calc(var(--height)*0.8);
+}
+#danxuang[type='checkbox']:checked~label .xinxin:nth-child(8){
+    left: calc(var(--height)*1.25);
+    top: calc(var(--height)*0.40625);
+    --xin1:calc(var(--height)*0.6);
+}
+#danxuang[type='checkbox']:checked~label .xinxin:nth-child(9){
+    left: calc(var(--height)*0.78125);
+    top: calc(var(--height)*0.5);
+    --xin1:calc(var(--height)*0.4);
+}
+#danxuang[type='checkbox']:checked~label .xinxin:nth-child(10){
+    left: calc(var(--height)*0.9375);
+    top: calc(var(--height)*0.15625);
+    --xin1:calc(var(--height)*0.5);
+}
+#danxuang[type='checkbox']:checked~label .xinxin:nth-child(11){
+    left: calc(var(--height)*1.09375);
+    top: calc(var(--height)*0.6875);
+    --xin1:calc(var(--height)*0.7);
+}
+#danxuang[type='checkbox']:checked~label .xinxin:nth-child(12){
+    left: calc(var(--height)*0.125);
+    top: calc(var(--height)*0.5625);
+    --xin1:calc(var(--height)*0.4);
+}
+#danxuang[type='checkbox']:checked~label .xinxin:nth-child(13){
+    left: calc(var(--height)*0.53125);
+    top: calc(var(--height)*0.875);
+    --xin1:calc(var(--height)*0.3);
+}
